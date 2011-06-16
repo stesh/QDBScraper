@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-__author__ == 'Stephen Shaw <stesh@netsoc.tcd.ie>'
+__author__ = 'Stephen Shaw <stesh@netsoc.tcd.ie>'
 
 import sys
 import codecs
@@ -63,7 +63,7 @@ def unhtml(text):
     txt = text[:]
     matches = set(re.findall(entity, text))
     for m in matches:
-        if m[1:-1] in name2codepoint.keys():
+        if m[1:-1] in name2codepoint:
             codepoint = name2codepoint[m[1:-1]]
         elif unientity.match(m):
             (base, cut) = (16,3) if 'x' in m else (10,2)
